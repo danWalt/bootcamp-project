@@ -1,31 +1,42 @@
 import React from 'react';
 
-export default function Campaign(props) {
+class Campaign extends React.Component {
+  
+  constructor(props){
+    super(props);
+    this.campaign = props
+  }
+
+  render(){
   return (
     <tbody>
       <tr className="row-tr">
         {/* <div className="id-div"> */}
-        <td className="id">{props.id}</td>
+        <td className="id">{this.campaign.id}</td>
         {/* </div> */}
         {/* <div className="campaign-div"> */}
-        <td className="campaign--name">{props.name}</td>
-        <td className="package--name">{props.package}</td>
+        <td className="campaign--name">{this.campaign.name}</td>
+        <td className="package--name">{this.campaign.package}</td>
         {/* </div> */}
         {/* <div className="bid-div"> */}
-        <td className="bid--value">{props.bid}</td>
-        <td className="cost--model">{props.cost_model}</td>
+        <td className="bid--value">{this.campaign.bid}</td>
+        <td className="cost--model">{this.campaign.cost_model}</td>
         {/* </div> */}
         {/* <div className="geos-div"> */}
-        <td className="geos--value">{props.geos}</td>
+        <td className="geos--value">{this.campaign.geos}</td>
         {/* </div> */}
         {/* <div className="placements-div"> */}
-        <td className="placements--list">{props.placements}</td>
+        <td className="placements--list">{this.campaign.placements}</td>
         {/* </div> */}
         {/* <div className="advertiser-div"> */}
-        <td className="advertiser--value">{props.advertiser}</td>
-        <td className="am--value">{props.account_manager}</td>
+        <td className="advertiser--value">{this.campaign.advertiser}</td>
+        <td className="am--value">{this.campaign.account_manager}</td>
         {/* </div> */}
       </tr>
     </tbody>
   );
 }
+}
+
+export default Campaign;
+

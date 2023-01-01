@@ -3,15 +3,22 @@ import mockCampaigns from './campaignsData';
 import Table from './Components/CampaignsComponents/Table';
 import Filter from './Components/CampaignsComponents/Filtering';
 
-function CampaignsPage() {
-  let campaigns = mockCampaigns;
+class CampaignsPage extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.campaigns = mockCampaigns
+  }
+
+  render(){
   return (
     <div className="campaigns-container">
       <h1>Campaigns</h1>
-      <Filter campaignsObjects={campaigns}/>
-      <Table campaignsObjects={campaigns}/>
+      <Filter campaignsObjects={this.campaigns}/>
+      <Table campaignsObjects={this.campaigns}/>
     </div>
   );
+}
 }
 
 export default CampaignsPage;
